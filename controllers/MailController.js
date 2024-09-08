@@ -2,12 +2,12 @@ const oauth = require('../configuration/oauth');
 const nodemailer = require('nodemailer');
 
 exports.sendEmail = (req, res) => {
-  const { name, lastname, email, message } = req.body;
+  const { name, lastname, email, message, subject = '' } = req.body;
 
   let mailOptions = {
     from: name,
     to: 'faouzi.aitelhara@gmail.com, joebarne15@gmail.com',
-    subject: '[ENQUIRY]: ' + name,
+    subject: `[ENQUIRY]: ${subject}` + name,
     text: message,
     html:
       'Message from: ' +
