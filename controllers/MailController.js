@@ -7,7 +7,7 @@ exports.sendEmail = (req, res) => {
   let mailOptions = {
     from: name,
     to: 'faouzi.aitelhara@gmail.com, joebarne15@gmail.com',
-    subject: `[ENQUIRY]: ${subject}` + name,
+    subject: `[ENQUIRY]: ${subject} - from ${name} ${lastname}`,
     text: message,
     html:
       'Message from: ' +
